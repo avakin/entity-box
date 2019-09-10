@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles/index.less";
+import "./App.less";
+import EntityBox from "./components/EntityBox";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="app">
+      <div className="entities">
+        {entities.map((el, index) => (
+          <EntityBox key={index} {...el} />
+        ))}
+      </div>
+    </main>
   );
 }
+
+const entities = [
+  {
+    entityType: "AppTier",
+    entityName: "BD",
+    connected: true,
+    count: 32
+  },
+  {
+    entityType: "Test entity type",
+    entityName: "Some of entity name to display",
+    connected: false,
+    count: 178
+  }
+];
 
 export default App;

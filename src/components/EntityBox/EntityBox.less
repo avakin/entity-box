@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.entity {
+  &.holder {
+    max-width: 300px;
+    min-width: 300px;
+    border-radius: 4px;
+    border: 2px solid @lightgray;
+    padding: @entity-padding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .type {
+    font-size: @f-small;
+    color: @blue;
+    background: @lightblue;
+    padding: 4px 8px;
+    border-radius: 2px;
+    max-width: 63px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  > div {
+    flex: 0 0 auto;
+  }
+  .counter {
+    margin: 0 0 0 10px;
+  }
+  .name {
+    flex: 1 0 auto;
+    padding: 0 6px;
+    color: @black;
+    max-width: 120px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+  }
+}
